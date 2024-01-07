@@ -9276,6 +9276,7 @@ function _InitObjects()
 	        sphere.Color = Color3.fromRGB(205, 205, 205)
 		sphere.Material = Enum.Material.Plastic
 		sphere.Parent = self.Character
+                sphere.Transparency = 1
                 sphere.Anchored = false
 		local floor = Instance.new("Part")
 	        floor.Color = Color3.fromRGB(163, 162, 165)
@@ -9283,6 +9284,7 @@ function _InitObjects()
 	        floor.Material = Enum.Material.Plastic
 		floor.Parent = self.Character
                 floor.CanCollide = false
+                floor.Transparency = 1
                 floor.Anchored = false
 		local isR15 = (humanoid.RigType == Enum.HumanoidRigType.R15)
 		local height = isR15 and (humanoid.HipHeight + 0.05) or 2
