@@ -9302,7 +9302,7 @@ function _InitObjects()
 	        gyro.D = 500
 		gyro.CFrame = hrp.CFrame
 		gyro.Parent = hrp
-		local vForce = Instance.new
+		local vForce = Instance.new("VectorForce")
 	        vForce.ApplyAtCenterOfMass = true
                 vForce.RelativeTo = Enum.ActuatorRelativeTo.World
                 vForce.Enabled = true
