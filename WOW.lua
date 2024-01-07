@@ -9271,9 +9271,15 @@ function _InitObjects()
 	local function initObjects(self)
 		local hrp = self.HRP
 		local humanoid = self.Humanoid
-		local sphere = SPHERE:Clone()
+		local sphere = Instance.new("Part")
+	        sphere.Size = Vector3.new(2, 2, 2)
+	        sphere.Color = Color3.fromRGB(205, 205, 205)
+		sphere.Material = Enum.Material.Plastic
 		sphere.Parent = self.Character
-		local floor = FLOOR:Clone()
+		local floor = Instance.new("Part")
+	        floor.Color = Color3.fromRGB(163, 162, 165)
+	        floor.Size = Vector3.new(2, 1, 1)
+	        floor.Material = Enum.Material.Plastic
 		floor.Parent = self.Character
 		local isR15 = (humanoid.RigType == Enum.HumanoidRigType.R15)
 		local height = isR15 and (humanoid.HipHeight + 0.05) or 2
@@ -9287,10 +9293,20 @@ function _InitObjects()
 		weld2.Part0 = hrp
 		weld2.Part1 = floor
 		weld2.Parent = floor
-		local gyro = BGYRO:Clone()
+		local gyro = Instance.new("BodyGyro")
+	        gyro.MaxTorque = Vector3.new(100000, 100000, 100000)
+	        gyro.P = 25000
+	        gyro.D = 500
 		gyro.CFrame = hrp.CFrame
 		gyro.Parent = hrp
-		local vForce = VFORCE:Clone()
+		local vForce = Instance.new
+	        vForce.ApplyAtCenterOfMass = true
+                vForce.RelativeTo = Enum.ActuatorRelativeTo.World
+                vForce.Enabled = true
+                vForce.Color = BrickColor.Blue()
+                vForce.Visible = false
+                vForce.Force = Vector3.new(0, 0, 0)
+                vForce.Parent = workspace
 		vForce.Attachment0 = isR15 and hrp:WaitForChild("RootRigAttachment") or hrp:WaitForChild("RootAttachment")
 		vForce.Parent = hrp
 		return sphere, gyro, vForce, floor
