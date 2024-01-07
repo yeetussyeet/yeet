@@ -9276,11 +9276,14 @@ function _InitObjects()
 	        sphere.Color = Color3.fromRGB(205, 205, 205)
 		sphere.Material = Enum.Material.Plastic
 		sphere.Parent = self.Character
+                sphere.Anchored = false
 		local floor = Instance.new("Part")
 	        floor.Color = Color3.fromRGB(163, 162, 165)
 	        floor.Size = Vector3.new(2, 1, 1)
 	        floor.Material = Enum.Material.Plastic
 		floor.Parent = self.Character
+                floor.CanCollide = false
+                floor.Anchored = false
 		local isR15 = (humanoid.RigType == Enum.HumanoidRigType.R15)
 		local height = isR15 and (humanoid.HipHeight + 0.05) or 2
 		local weld = Instance.new("Weld")
