@@ -797,7 +797,7 @@ local function synsaveinstance(CustomOptions)
 		}
 		]]
 		ExtraInstances = {},
-		NilInstances = false,
+		NilInstances = true,
 		ShowStatus = true,
 		FilePath = false, --  does not need to contain a file extension, only the name of the file.
 		Object = false, -- If provided, saves as .rbxmx (Model file) instead; If Object is game, it will be saved as a .RBXL file -- ! MUST BE AN INSTANCE REFERENCE like game.Workspace for example; "optimized" mode is NOT supported with this option
@@ -810,11 +810,11 @@ local function synsaveinstance(CustomOptions)
 		IgnoreSpecialProperties = false, -- true will disable Terrain & some other things
 		-- IsolatePlayerGui = false,
 		IsolateStarterPlayer = false, --If enabled, StarterPlayer will be cleared and the saved starter player will be placed into folders.
-		IsolateLocalPlayer = false, -- Saves Children of LocalPlayer as separate folder and prevents any instance of ClassName Player with .Name identical to LocalPlayer.Name from saving
-		IsolateLocalPlayerCharacter = false, -- Saves Children of LocalPlayer.Character as separate folder and prevents any instance of ClassName Player with .Name identical to LocalPlayer.Name from saving
+		IsolateLocalPlayer = true, -- Saves Children of LocalPlayer as separate folder and prevents any instance of ClassName Player with .Name identical to LocalPlayer.Name from saving
+		IsolateLocalPlayerCharacter = true, -- Saves Children of LocalPlayer.Character as separate folder and prevents any instance of ClassName Player with .Name identical to LocalPlayer.Name from saving
 		-- MaxThreads = 3
 		RemovePlayerCharacters = true, -- If enabled, player characters will not be saved.
-		SavePlayers = false,
+		SavePlayers = true,
 		SaveCacheInterval = 0x1600, -- The less the more often it saves, but that would mean less performance due to constantly saving
 		ReadMe = true,
 		-- ! Risky
